@@ -18,9 +18,54 @@ public class Cell {
 		this.left = left;
 		this.right = right;
 		this.down = down;
+		mirror = " ";
 	}
 	
-	public void redirect
+	public void redirect(int direction) {
+		int nextDirection = 0;
+		
+		switch(mirror) {
+		case ' ':
+			switch(direction) {
+			case UP:
+				nextDirection = UP;
+				break;
+				
+			case RIGHT:
+				nextDirection = RIGHT;
+				break;
+				
+			case DOWN:
+				nextDirection = DOWN;
+				break;
+				
+			case LEFT:
+				nextDirection = LEFT;
+				break;
+			}
+			break;
+			
+		case '/':
+			switch(direction) {
+			case UP:
+				nextDirection = UP;
+				break;
+				
+			case RIGHT:
+				nextDirection = RIGHT;
+				break;
+				
+			case DOWN:
+				nextDirection = DOWN;
+				break;
+				
+			case LEFT:
+				nextDirection = LEFT;
+				break;
+			}
+			break;
+		}
+	}
 	
 	public String toString() {
 		return "[" + mirror + "]";
